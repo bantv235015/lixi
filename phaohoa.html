@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc Mừng Năm Mới 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: "Arial", sans-serif;
+        background-color: #0a0a2a;
+        cursor: crosshair;
+      }
+
+      /* --- BACKGROUND & TIÊU ĐỀ --- */
+      .cay-dao-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .cay-dao-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        object-position: center bottom;
+      }
+
+      h1 {
+        position: absolute;
+        top: 5%;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        z-index: 20;
+        font-family: "Dancing Script", cursive;
+        font-size: 5rem;
+        font-weight: bold;
+        background: linear-gradient(to bottom, #ffd700, #ffcc00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 15px #ff0000);
+        animation: text-glow 2s ease-in-out infinite alternate;
+        pointer-events: none; /* Để click xuyên qua chữ */
+      }
+      @keyframes text-glow {
+        from {
+          filter: drop-shadow(0 0 2px #ff0000) drop-shadow(0 0 5px #ff0000);
+        }
+        to {
+          filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 20px #ffcc00);
+        }
+      }
+
+      /* --- LÌ XÌ --- */
+      .lixi {
+        position: absolute;
+        width: 3%;
+        max-width: 35px;
+        min-width: 20px;
+        cursor: pointer;
+        z-index: 30; /* Cao hơn background */
+        transform-origin: top center;
+        animation: gio-thoi 3s ease-in-out infinite alternate;
+        transition:
+          transform 0.3s,
+          opacity 0.5s;
+      }
+      .lixi:hover {
+        transform: scale(1.3) !important;
+        z-index: 35;
+      }
+      .lixi img {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+      }
+      .lixi::before {
+        content: "";
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        width: 1px;
+        height: 15%;
+        background-color: #ffd700;
+      }
+      @keyframes gio-thoi {
+        0% {
+          transform: rotate(-6deg);
+        }
+        100% {
+          transform: rotate(6deg);
+        }
+      }
+
+      /* --- POPUP LỜI CHÚC (MODAL) --- */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+        display: none; /* Ẩn mặc định */
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        background: linear-gradient(135deg, #d32f2f, #b71c1c);
+        padding: 30px;
+        border-radius: 15px;
+        border: 4px solid #ffd700;
+        text-align: center;
+        max-width: 400px;
+        width: 80%;
+        box-shadow: 0 0 20px #ffd700;
+        animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+      @keyframes popIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .modal-text {
+        color: #ffd700;
+        font-family:
+          "Playfair Display", serif; /* Font chữ trang trọng cho lời chúc */
+        font-size: 1.8rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+      .close-btn {
+        background: #ffd700;
+        color: #d32f2f;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .close-btn:hover {
+        background: #fff;
+        transform: scale(1.1);
+      }
+
+      /* --- PHÁO HOA --- */
+      .projectile {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ffffff, #ffcc00, #ff5500);
+        box-shadow:
+          0 0 10px #ffcc00,
+          0 0 20px #ff5500;
+        transform-origin: center center;
+        transform: scaleY(1.5);
+        transition: top 1s ease-out;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .particle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        box-shadow: 0 0 8px currentColor;
+        pointer-events: none;
+        z-index: 9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cay-dao-container" id="khung-cay">
+      <h1>Chúc Mừng Năm Mới 2026</h1>
+      <img src="caydao.png" alt="Cây Đào Đêm Sao" class="cay-dao-img" />
+    </div>
+
+    <div class="modal-overlay" id="modal">
+      <div class="modal-content">
+        <div class="modal-text" id="noi-dung-loi-chuc"></div>
+        <button class="close-btn" onclick="dongLoiChuc()">Cảm ơn!</button>
+      </div>
+    </div>
+
+    <script>
+      // === 1. DANH SÁCH 36 LỜI CHÚC ===
+      const danhSachLoiChuc = [
+        "Mã đáo thành công!",
+        "Tiền vào như nước sông Đà.",
+        "Sức khỏe vô biên.",
+        "Đời vui như Tết.",
+        "Sự nghiệp thăng tiến như Ngựa phi.",
+        "Tình duyên phơi phới.",
+        "Vạn sự như ý.",
+        "Tỷ sự như mơ.",
+        "Ăn mau chóng béo.",
+        "Hay ăn chóng lớn.",
+        "Năm mới bình an.",
+        "Công thành danh toại.",
+        "Mua may bán đắt.",
+        "Gia đình hạnh phúc.",
+        "Tấn tài tấn lộc.",
+        "365 ngày phát tài.",
+        "Sớm có người yêu.",
+        "Deadline tự chạy.",
+        "Tiền lương cao ngất.",
+        "Làm gì cũng đỏ.",
+        "Sức khỏe dẻo dai.",
+        "Sống lâu trăm tuổi.",
+        "Cha mẹ mạnh khỏe.",
+        "Vàng đeo đầy tay.",
+        "Ra ngõ gặp quý nhân.",
+        "Mọi sự hanh thông.",
+        "Việc nhàn lương cao.",
+        "Trẻ mãi không già.",
+        "Du lịch năm châu.",
+        "Khai xuân đắc lộc.",
+        "Đánh đâu thắng đó.",
+        "Tình như kẹo ngọt.",
+        "Bụng 6 múi.",
+        "Ví 9 con số.",
+        "Thắng lợi mới!",
+        "May mắn ngập tràn!",
+      ];
+
+      // === 2. XỬ LÝ LÌ XÌ & POPUP ===
+      const KHUNG_CAY = document.getElementById("khung-cay");
+      const MODAL = document.getElementById("modal");
+      const TEXT_LOI_CHUC = document.getElementById("noi-dung-loi-chuc");
+
+      // Hàm mở lời chúc
+      function moLoiChuc(loiChuc) {
+        TEXT_LOI_CHUC.textContent = loiChuc;
+        MODAL.style.display = "flex";
+        // Tạo hiệu ứng nổ pháo giấy khi mở lì xì
+        taoPhaoGiay();
+      }
+
+      // Hàm đóng lời chúc
+      function dongLoiChuc() {
+        MODAL.style.display = "none";
+      }
+
+      // Tạo lì xì
+      function taoLixi() {
+        // Lặp đúng số lượng lời chúc đang có (36 cái)
+        for (let i = 0; i < danhSachLoiChuc.length; i++) {
+          let divLixi = document.createElement("div");
+          divLixi.className = "lixi";
+
+          let imgLixi = document.createElement("img");
+          imgLixi.src = "lixi.png";
+          divLixi.appendChild(imgLixi);
+
+          // Rải ngẫu nhiên
+          let topPos = Math.floor(Math.random() * (90 - 15 + 1)) + 15;
+          let leftPos = Math.floor(Math.random() * (95 - 5 + 1)) + 5;
+
+          divLixi.style.top = topPos + "%";
+          divLixi.style.left = leftPos + "%";
+          divLixi.style.animationDelay = Math.random() * 2 + "s";
+          divLixi.style.animationDuration = Math.random() * 2 + 2.5 + "s";
+
+          // --- SỰ KIỆN CLICK VÀO LÌ XÌ ---
+          divLixi.addEventListener("click", function (e) {
+            e.stopPropagation(); // Ngăn không cho kích hoạt bắn pháo hoa của background
+
+            // 1. Mở popup lời chúc tương ứng
+            moLoiChuc(danhSachLoiChuc[i]);
+
+            // 2. Làm biến mất bao lì xì này (như đã hái lộc)
+            this.style.opacity = "0";
+            this.style.pointerEvents = "none";
+          });
+
+          KHUNG_CAY.appendChild(divLixi);
+        }
+      }
+      taoLixi();
+
+      // === 3. PHÁO HOA & NỀN (Giữ nguyên logic cũ) ===
+      const INTERVAL_TIME = 1500;
+      const PARTICLE_COUNT = 60;
+      const GRAVITY = 0.08;
+      const FRICTION = 0.96;
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 3;
+      let isTabActive = true;
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+      document.addEventListener("visibilitychange", () => {
+        isTabActive = !document.hidden;
+      });
+
+      function launchFirework() {
+        const projectile = document.createElement("div");
+        projectile.className = "projectile";
+        const startX = mouseX;
+        const startY = window.innerHeight + 20;
+        projectile.style.left = `${startX - 4}px`;
+        projectile.style.top = `${startY}px`;
+        document.body.appendChild(projectile);
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            projectile.style.top = `${mouseY}px`;
+          });
+        });
+
+        projectile.addEventListener("transitionend", function (e) {
+          if (e.propertyName !== "top") return;
+          explode(startX, mouseY);
+          projectile.remove();
+        });
+      }
+
+      function explode(x, y) {
+        const colors = [
+          "#ff0000",
+          "#00ff00",
+          "#4287f5",
+          "#ffff00",
+          "#00ffff",
+          "#ff00ff",
+          "#ffffff",
+        ];
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          createParticle(x, y, colors);
+        }
+      }
+
+      // Tách hàm tạo hạt để dùng chung cho cả pháo hoa và lì xì
+      function createParticle(x, y, colors) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.backgroundColor = color;
+        particle.style.color = color;
+        document.body.appendChild(particle);
+
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 7 + 3;
+        const velocity = {
+          x: Math.cos(angle) * speed,
+          y: Math.sin(angle) * speed,
+        };
+        let opacity = 1;
+        let currentX = x;
+        let currentY = y;
+
+        function animate() {
+          velocity.x *= FRICTION;
+          velocity.y *= FRICTION;
+          velocity.y += GRAVITY;
+          currentX += velocity.x;
+          currentY += velocity.y;
+          opacity -= 0.015;
+          particle.style.left = `${currentX}px`;
+          particle.style.top = `${currentY}px`;
+          particle.style.opacity = opacity;
+          if (opacity > 0) requestAnimationFrame(animate);
+          else particle.remove();
+        }
+        animate();
+      }
+
+      // Hàm nổ pháo giấy ở giữa màn hình khi mở lì xì
+      function taoPhaoGiay() {
+        const colors = ["gold", "red", "white"];
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        for (let i = 0; i < 100; i++) {
+          createParticle(centerX, centerY, colors);
+        }
+      }
+
+      setInterval(() => {
+        if (isTabActive && MODAL.style.display !== "flex") launchFirework();
+      }, INTERVAL_TIME);
+      document.addEventListener("click", (e) => {
+        // Chỉ bắn pháo hoa khi không click vào lì xì hoặc modal
+        if (e.target.closest(".lixi") || e.target.closest(".modal-content"))
+          return;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        launchFirework();
+      });
+    </script>
+  </body>
+</html>
